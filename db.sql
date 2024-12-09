@@ -5,7 +5,8 @@ create table usuario(
 id int primary key auto_increment,
 nome varchar(200),
 senha varchar(200),
-email varchar(200)
+email varchar(200),
+tipo enum ("aluno","professor")
 );
 
 create table professor(
@@ -15,4 +16,6 @@ semana enum ("segunda","terça","quarta","quinta","sexta","sabado","domingo"),
 turno_inicio datetime,
 turno_fim datetime
 );
+
+
 

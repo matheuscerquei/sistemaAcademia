@@ -5,6 +5,7 @@ $nome = $_POST['nome'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 $confirmar_senha = $_POST['confirmar_senha'];
+$tipo= $_POST['tipo'];
 
 
 
@@ -20,11 +21,12 @@ if ($senha !== $confirmar_senha) {
 // Aqui você pode adicionar a lógica para inserir os dados no banco de dados
 try {
     // Prepare a instrução SQL
-    $stmt = $pdo->prepare("INSERT INTO usuario (nome, email ,senha) VALUES (:nome,:email, :senha)");
+    $stmt = $pdo->prepare("INSERT INTO usuario (nome, email ,senha, tipo) VALUES (:nome,:email, :senha, :tipo)");
 
     // Bind dos parâmetros
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':tipo', $tipo);
     // É recomendável usar password_hash para armazenar senhas de forma segura
     $hashedPassword = password_hash($senha, PASSWORD_DEFAULT);
     $stmt->bindParam(':senha', $hashedPassword);

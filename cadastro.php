@@ -41,6 +41,10 @@
         <div class="mb-3">
             <label for="confirm-password" class="form-label text-white">Confirmar Senha</label>
             <input name="confirmar_senha" class="form-control" id="confirm-password" placeholder="Confirme sua senha" required>
+            <select name="tipo" id="tipo">
+                <option value="aluno">aluno</option>
+                <option value="professor">professor</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
     </form>
