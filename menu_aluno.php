@@ -19,7 +19,16 @@
         }
     </style>
 <body>
-
+<div class="btn-group text-white mb-3 container w-50 border border-3 rounded p-4 shadow" style="background-color: whiter;">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+Menu Aluno
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end ">
+    <li><button class="dropdown-item" type="button"></button></li>
+    <li><button class="dropdown-item" type="button">Another action</button></li>
+    <li><button class="dropdown-item" type="button">Something else here</button></li>
+  </ul>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
 </body>
