@@ -9,7 +9,7 @@
   <title>Menu Aluno</title>
   <style>
     body {
-      background-image: url('https://img.freepik.com/fotos-gratis/homem-jovem-fitness-em-estudio_7502-5016.jpg?t=st=1733922737~exp=1733926337~hmac=9325b1ce966cb470fa16896e7bb0278f46d20897e65b15579faeb15196aa638d&w=1380');
+      background-image: url('https://img.freepik.com/fotos-gratis/homem-jovem-fitness-em-estudio_7502-5016.jpg?t=st=1733952840~exp=1733956440~hmac=693b5ed7a1a84b801a203669830db945ed7e9f1ba3073b1395a1f458fd40a89b&w=1380');
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -38,14 +38,12 @@
     <h2 class="text-center text-primary mb-4">Menu Aluno</h2>
     <ul class="list-group">
       <li class="list-group-item">
-        <a class="text-dark" target="_blank" href="#"  style="text-decoration: none; font-weight: bold;">Ver aula cadastrada</a>
+        <a class="text-dark" target="_blank" href="verAula.php"  style="text-decoration: none; font-weight: bold;">Ver aula cadastrada</a>
       </li>
       <li class="list-group-item">
-        <a class="text-dark" target="_blank"  href="#" style="text-decoration: none; font-weight: bold;">Cadastrar Aula</a>
+        <a class="text-dark" target="_blank"  href="cadastaraAula.php" style="text-decoration: none; font-weight: bold;">Cadastrar Aula</a>
       </li>
-      <li class="list-group-item">
-        <a class="text-dark"  target="_blank "href="#" style="text-decoration: none; font-weight: bold;">Something else here</a>
-      </li>
+      
     </ul>
 </div>
 
