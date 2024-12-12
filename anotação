@@ -5,6 +5,11 @@ require "configPDO.php";
 $sql = $pdo->prepare("SELECT id_professor, nome_professor FROM professor");
 $sql->execute();
 $professores = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+// Consulta para buscar os usuários (alunos)
+$sql = $pdo->prepare("SELECT id_usuario, nome FROM usuario WHERE tipo = 'aluno'"); // Filtra apenas alunos
+$sql->execute();
+$usuarios = $sql->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -16,30 +21,6 @@ $professores = $sql->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Agendamento</title>
 </head>
-<style>
-    body {
-      background-image: url('https://img.freepik.com/fotos-gratis/homem-jovem-fitness-em-estudio_7502-5016.jpg?t=st=1733952840~exp=1733956440~hmac=693b5ed7a1a84b801a203669830db945ed7e9f1ba3073b1395a1f458fd40a89b&w=1380');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .list-group-item {
-    transition: background-color 0.3s, transform 0.3s;
-  }
-
-  .list-group-item:hover {
-    background-color: #f8f9fa; /* Cor de fundo ao passar o mouse */
-    transform: scale(1.02); /* Efeito de aumento ao passar o mouse */
-  }
-
-  .text-primary {
-    font-family: 'Arial', sans-serif; /* Fonte do título */
-  }
-    }
-  </style>
 <body>
     <form action="criar_horario.php" method="post" class="container w-50 border border-3 rounded p-4 shadow" style="background-color: gray;">
         <h2 class="text-center text-white">Cadastrar Agendamento</h2>
@@ -51,6 +32,18 @@ $professores = $sql->fetchAll(PDO::FETCH_ASSOC);
                 <?php foreach ($professores as $professor): ?>
                     <option value="<?= htmlspecialchars($professor['id_professor']); ?>">
                         <?= htmlspecialchars($professor['nome_professor']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="usuario">Aluno:</label>
+            <select class="form-control" id="usuario" name="id_usuario" required>
+                <option value="">Selecione um aluno</option>
+                <?php foreach ($usuarios as $usuario): ?>
+                    <option value="<?= htmlspecialchars($usuario['id_usuario']); ?>">
+                        <?= htmlspecialchars($usuario['nome']); ?>
                     </option>
                 <?php endforeach; ?>
             </select>
