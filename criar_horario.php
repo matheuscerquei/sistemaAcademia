@@ -43,5 +43,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
-//header('location: verAgendamento.php')
+header('location: verAgendamento.php')
 ?>
